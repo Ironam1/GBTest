@@ -4,8 +4,12 @@
   <head>
     <title>GBTest</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="app.js"></script>
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- <script type="text/javascript" src="app.js"></script> -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -23,7 +27,7 @@
           animi officia harum dicta nobis?
         </p>
         <div class="form">
-          <input type="text" id="palindrome" name="palindrome"/>
+          <input type="text" id="palindrome" name="palindrome" />
           <button type="submit" id="submit">Check!</button>
         </div>
       </div>
@@ -32,5 +36,28 @@
     <footer>
       <p>This is a footer!</p>
     </footer>
+    <script>
+      $("#submit").on("click", function(e) {
+        e.preventDefault();
+        word = "";
+        // alert("Button clicked!");
+        function checkWord(word) {
+          word = $("#palindrome")
+            .val()
+            .trim();
+          word.split(" ").join("");
+          word.toLowerCase();
+          console.log(word + " this is word");
+          for (i = 0; i < word.length / 2; i++) {
+            if (word[i] !== word[word.length - i - 1]) {
+              alert("No");
+            } else {
+              alert("Yes");
+            }
+          }
+        }
+        checkWord();
+      });
+    </script>
   </body>
 </html>

@@ -3,9 +3,9 @@ $(document).ready(function() {
   function checkWord(word) {
     var word = [];
 
-    $(".submit").on("click", function(e) {
+    $("#submit").on("click", function(e) {
+      e.preventefault();
         alert("button clicked")
-    //   e.preventefault();
     //   word = $(".palindrome")
     //     .val()
     //     .trim();
